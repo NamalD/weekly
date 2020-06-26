@@ -3,18 +3,18 @@
   import {
     formatSameMonth,
     formatDifferentMonths
-  } from "./helpers/dateFormat.js";
+  } from "../helpers/dateFormat.js";
 
   export let date;
 
-  let dateMoment = moment(date);
-  let startDate = dateMoment.clone().day("Monday");
-  let endDate = dateMoment.clone().day("Friday");
+  const dateMoment = moment(date);
+  const startDate = dateMoment.clone().day("Monday");
+  const endDate = dateMoment.clone().day("Friday");
 
-  let weekFormat =
+  const weekFormat =
     startDate.month() == endDate.month()
       ? formatSameMonth(startDate, endDate)
       : formatDifferentMonths(startDate, endDate);
 </script>
 
-<h1 class="title">{weekFormat}</h1>
+<p class="title">{weekFormat}</p>
